@@ -1,5 +1,5 @@
 import { useState } from "react"
-import reactLogo from "./assets/react.svg"
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,11 +20,7 @@ function App() {
           target="_blank"
           className="transition-transform hover:scale-110"
         >
-          <img
-            src={reactLogo}
-            alt="React logo"
-            className="h-24 w-24"
-          />
+
         </a>
       </div>
 
