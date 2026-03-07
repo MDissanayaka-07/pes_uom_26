@@ -1,21 +1,23 @@
-type MemberProps = {
-  name: string
-  role: string
-  image: string
+interface MemberCardProps {
+  name: string;
+  role: string;
+  image: string;
 }
 
-export default function MemberCard({ name, role, image }: MemberProps) {
+export default function MemberCard({name,role,image}: MemberCardProps){
 
-  return (
-    <div className="member-card">
+return(
 
-      <img src={image} alt={name} className="member-img"/>
+<div className="member-card">
 
-      <h3>{name}</h3>
+<img src={image} alt={name} />
 
-      <p>{role}</p>
+<h3>{name}</h3>
 
-    </div>
-  )
+<p>{role}</p>
+
+</div>
+
+)
 
 }

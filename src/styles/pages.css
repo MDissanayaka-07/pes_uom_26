@@ -10,12 +10,21 @@ background:#f5f7f6;
 /* NAVBAR */
 
 .navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:#1B5E20;
-padding:10px 40px;
-flex-wrap:wrap;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:12px 60px; 
+
+  background:#1B5E20;
+  z-index:1000;
+
+  box-sizing:border-box;
 }
 
 .logo-image{
@@ -28,11 +37,19 @@ gap:25px;
 }
 
 .nav-links a{
-color:white;
-text-decoration:none;
-font-weight:500;
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  padding:8px 12px;
+  border-radius:6px;
+
+  transition:all 0.3s ease;
 }
 
+.nav-links a:hover{
+  color:#A5D6A7;                 
+  background:rgba(255,255,255,0.15);  
+}
 
 /* HERO VIDEO */
 
@@ -84,40 +101,172 @@ margin-top:50px;
 }
 
 
-/* VISION + MISSION */
+/* VISION + MISSION SECTION */
 
 .vision-mission{
-display:flex;
-gap:30px;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:50px;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:60px;
+  flex-wrap:wrap;
 }
+
+
+/* CARD STYLE */
 
 .vision-card,
 .mission-card{
-background:white;
-padding:30px;
-width:380px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+  background:white;
+  padding:40px;
+
+  width:420px;
+  min-height:220px;
+
+  border-radius:14px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+  transition:all 0.3s ease;
 }
 
 
-/* ADVISOR */
+/* HOVER EFFECT */
+
+.vision-card:hover,
+.mission-card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:0 14px 30px rgba(0,0,0,0.12);
+}
+
+
+/* TITLES */
+
+.vision-card h2,
+.mission-card h2{
+
+  font-size:24px;
+  margin-bottom:20px;
+}
+
+
+/* TEXT */
+
+.vision-card p{
+  font-style:italic;
+  font-size:17px;
+  line-height:1.6;
+}
+
+
+.mission-text{
+
+  font-style:italic;
+  color:#444;
+
+  line-height:1.8;
+}
+
+/* ADVISOR SECTION */
 
 .advisor-section{
-text-align:center;
-margin-top:70px;
+  text-align:center;
+  margin-top:80px;
 }
+
+
+/* CARD */
+
+.advisor-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+
+/* IMAGE CONTAINER */
+
+.advisor-image-container{
+  position:relative;
+  width:240px;
+  height:240px;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+
+/* IMAGE */
 
 .advisor-img{
-width:220px;
-border-radius:20px;
-margin:20px 0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 
+/* OVERLAY */
+
+.advisor-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,0.75);
+  color:white;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  padding:10px;
+
+  opacity:0;
+
+  transition:0.35s ease;
+}
+
+/* SHOW ON HOVER */
+
+.advisor-image-container:hover .advisor-overlay{
+  opacity:1;
+}
+
+
+/* TEXT */
+
+.advisor-overlay p{
+  font-size:13px;
+  line-height:1.5;
+
+  max-width:180px;     /* prevents cutting */
+  word-wrap:break-word;
+
+  margin:4px 0;
+}
+
+
+/* NAME */
+
+.advisor-card h3{
+  margin-top:12px;
+}
+
+
+/* ROLE */
+
+.advisor-role{
+  color:#666;
+}
 /* COMMITTEE GRID */
 
 .committee-grid{
@@ -158,9 +307,12 @@ display:flex;
 justify-content:center;
 gap:25px;
 margin:20px 0;
-flex-wrap:wrap;
 }
 
+.footer-links a{
+color:white;
+text-decoration:none;
+}
 
 /* ---------------- MOBILE RESPONSIVE ---------------- */
 
@@ -229,4 +381,301 @@ font-size:14px;
 height:35px;
 }
 
+}
+
+/* ---------------- Commitees ---------------- */
+
+.committee-page{
+max-width:1100px;
+margin:auto;
+padding:100px 50px;
+}
+
+
+.committee-title{
+text-align:center;
+margin-bottom:40px;
+font-size:36px;
+}
+
+.committee-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.member-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.member-card:hover{
+transform:translateY(-5px);
+}
+
+.member-img{
+width:110px;
+height:110px;
+border-radius:50%;
+border:4px solid #4CAF50;
+margin-bottom:15px;
+}
+
+/* FIRST ROW (Chair + Vice Chair) */
+
+.committee-top{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-bottom:40px;
+flex-wrap:wrap;
+}
+
+
+/* SECOND ROW GRID */
+
+.committee-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:900px;
+margin:auto;
+}
+
+@media (max-width:768px){
+
+.vision-mission{
+
+  flex-direction:column;
+  align-items:center;
+
+}
+
+.vision-card,
+.mission-card{
+
+  width:90%;
+}
+
+}
+
+/* ACHIEVEMENTS */
+
+.achievement-section{
+  padding:80px 40px;
+  background:#0f172a;
+  text-align:center;
+}
+
+.achievement-section h2{
+  color:#4CAF50;
+  margin-bottom:40px;
+}
+
+.achievement-card{
+
+  background:#1e293b;
+  padding:25px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+.achievement-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 20px #4CAF50;
+}
+
+.achievement-card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.achievement-card p{
+  margin-top:15px;
+  color:white;
+}
+
+.committee-page{
+padding:100px 40px;
+max-width:1200px;
+margin:auto;
+}
+
+.committee-main-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.committee-tabs{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-bottom:50px;
+flex-wrap:wrap;
+}
+
+.tab{
+padding:10px 20px;
+border:none;
+background:#eaeaea;
+cursor:pointer;
+border-radius:20px;
+transition:0.3s;
+}
+
+.tab.active{
+background:#2e7d32;
+color:white;
+}
+
+.committee-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+justify-items:center;
+}
+
+
+/* CARD */
+
+.member-card{
+
+width:220px;
+height:260px;
+
+background:white;
+
+border-radius:14px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+padding:20px;
+
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
+
+transition:0.3s;
+
+cursor:pointer;
+}
+
+.member-card img{
+
+width:110px;
+height:110px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:3px solid #2e7d32;
+
+margin-bottom:15px;
+
+}
+
+
+/* GLOW HOVER */
+
+.member-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 25px #2e7d32;
+
+}
+
+
+/* POPUP */
+
+.popup-overlay{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:999;
+
+}
+
+.popup-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:16px;
+
+text-align:center;
+
+animation:popup 0.3s ease;
+
+}
+
+.popup-card img{
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+margin-bottom:15px;
+
+}
+
+@keyframes popup{
+
+from{transform:scale(0.7);opacity:0;}
+
+to{transform:scale(1);opacity:1;}
+
+}
+
+.committee-row{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.member-card{
+width:240px;
+height:260px;
+background:white;
+border-radius:14px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:all .3s ease;
+}
+
+.member-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px #2e7d32;
 }
