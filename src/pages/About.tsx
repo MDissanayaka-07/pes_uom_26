@@ -1,7 +1,8 @@
 
 import "../styles/pages.css";
 import energyVideo from "../assets/energy.mp4";
-import advisor from "../assets/advisor.jpg"; 
+import advisor from "../assets/Advisor.jpg";
+
 
 export default function About() {
   return (

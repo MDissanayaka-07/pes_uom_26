@@ -1,13 +1,9 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import About from "./Pages/About";
-import Committees from "./Pages/Commitees";
-
-import Achievements from "./components/Achievements";
-import AchievementDetails from "./Pages/AchievementDetails";
-
 import { Routes, Route } from "react-router-dom";
+import About from "./pages/About.tsx";
+import Committees from "./pages/Commitees.tsx";
 
 function App() {
   return (
