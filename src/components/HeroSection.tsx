@@ -14,6 +14,7 @@ export default function HeroSection() {
     useEffect(() => {
         const w1 = LINE1.split(" ").map((word, idx) => ({ word, idx, line: 1 }));
         const w2 = LINE2.split(" ").map((word, idx) => ({ word, idx: idx + w1.length, line: 2 }));
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setWords([...w1, ...w2]);
         const t = setTimeout(() => setReady(true), 80);
         return () => clearTimeout(t);
