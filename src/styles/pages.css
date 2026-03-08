@@ -7,49 +7,7 @@ background:#f5f7f6;
 }
 
 
-/* NAVBAR */
 
-.navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:12px 60px; 
-
-  background:#1B5E20;
-  z-index:1000;
-
-  box-sizing:border-box;
-}
-
-.logo-image{
-height:45px;
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-}
-
-.nav-links a{
-  color:white;
-  text-decoration:none;
-  font-weight:500;
-  padding:8px 12px;
-  border-radius:6px;
-
-  transition:all 0.3s ease;
-}
-
-.nav-links a:hover{
-  color:#A5D6A7;                 
-  background:rgba(255,255,255,0.15);  
-}
 
 /* HERO VIDEO */
 
