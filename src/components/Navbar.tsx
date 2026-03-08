@@ -39,8 +39,12 @@ export default function Navbar() {
                     className="max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-16"
                     style={{ height: scrolled ? "58px" : "72px", transition: "height 0.45s ease" }}
                 >
-                    {/* ── Logo + Brand ── */}
-                    <Link to="/" className="flex items-center gap-3 flex-shrink-0">
+                    {/* ── Logo + Brand — hidden on mobile when panel is open ── */}
+                    <Link
+                        to="/"
+                        className="flex items-center gap-3 flex-shrink-0"
+                        style={{ opacity: isOpen ? 0 : 1, transition: "opacity 0.25s ease", pointerEvents: isOpen ? "none" : "auto" }}
+                    >
                         <img
                             src={logo}
                             alt="IEEE PES"
@@ -173,14 +177,7 @@ export default function Navbar() {
                 >
                     <div className="flex items-center gap-3">
                         <img src={logo} alt="IEEE PES" className="h-9 w-auto" />
-                        <div className="flex flex-col leading-tight">
-                            <span className="text-white font-semibold text-[11px] tracking-widest uppercase">
-                                IEEE PES
-                            </span>
-                            <span className="text-white/40 text-[9px] tracking-wider uppercase">
-                                UoM Student Branch
-                            </span>
-                        </div>
+
                     </div>
                     <button
                         onClick={() => setIsOpen(false)}
