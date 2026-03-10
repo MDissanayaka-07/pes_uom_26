@@ -11,7 +11,7 @@ const NAV_LINKS = [
 
 export default function Footer() {
     return (
-        <footer className="bg-[#1B5E20] text-white text-center px-5 py-10 mt-0">
+        <footer className="bg-[#1B5E20] text-white text-center px-5 py-10 ">
 
             {/* Logo */}
             <div className="flex justify-center mb-4">
