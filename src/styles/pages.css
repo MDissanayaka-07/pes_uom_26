@@ -679,3 +679,173 @@ transition:all .3s ease;
 transform:translateY(-10px);
 box-shadow:0 0 25px #2e7d32;
 }
+/* awards panel */
+
+.awards-panel{
+
+position:fixed;
+
+right:15px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+z-index:999;
+
+transition:bottom 0.3s;
+
+}
+
+/* icon */
+
+.award-icon{
+
+width:55px;
+height:55px;
+
+background:#0f172a;
+
+border-radius:12px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+cursor:pointer;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+transition:0.3s;
+
+}
+
+.award-icon img{
+width:40px;
+}
+
+/* hover */
+
+.award-icon:hover{
+
+transform:scale(1.15);
+
+box-shadow:0 0 15px #2E7D32;
+
+}
+
+/* blinking patterns */
+
+.blink-0{
+animation:blink1 3s infinite;
+}
+
+.blink-1{
+animation:blink2 3s infinite;
+}
+
+.blink-2{
+animation:blink3 3s infinite;
+}
+
+@keyframes blink1{
+
+0%,100%{opacity:1}
+50%{opacity:0.6}
+
+}
+
+@keyframes blink2{
+
+0%,100%{opacity:0.7}
+50%{opacity:1}
+
+}
+
+@keyframes blink3{
+
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.1)}
+
+}
+
+/* popup */
+
+.award-popup{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+z-index:1000;
+
+}
+
+.award-popup-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:14px;
+
+text-align:center;
+
+max-width:350px;
+
+animation:popup 0.3s ease;
+
+}
+
+.award-popup-card img{
+
+width:140px;
+
+margin-bottom:15px;
+
+}
+
+.award-popup-card button{
+
+margin-top:10px;
+
+padding:8px 18px;
+
+border:none;
+
+background:#2E7D32;
+
+color:white;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+@keyframes popup{
+
+from{
+opacity:0;
+transform:scale(0.7);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
