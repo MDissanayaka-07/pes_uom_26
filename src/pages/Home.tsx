@@ -1,12 +1,11 @@
-import Achievements from "../components/Achievements";
+import HeroSection from "../components/HeroSection.tsx";
+import WhatIsPES from "../components/WhatIsPes.tsx";
 
 export default function Home() {
-
-  return (
-    <div>
-
-      <Achievements />
-
-    </div>
-  );
+    return (
+        <div className="mt-12">
+            <HeroSection/>
+            <WhatIsPES/>
+        </div>
+    );
 }
