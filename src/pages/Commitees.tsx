@@ -11,11 +11,11 @@ const committees = [
 {
 title:"Executive Committee",
 members:[
-{name:"President",role:"President",image:"src/assets/committee/president.jpg"},
-{name:"Vice President",role:"Vice President",image:"src/assets/committee/vp.jpg"},
-{name:"Secretary",role:"Secretary",image:"src/assets/committee/sec.jpg"},
-{name:"Treasurer",role:"Treasurer",image:"src/assets/committee/treasurer.jpg"},
-{name:"Webmaster",role:"Webmaster",image:"src/assets/committee/webmaster.jpg"}
+{name:"Kavishka Lakshan",role:"President",image:"src/assets/committee/kavishka.png"},
+{name:"Nadun Walaketiya",role:"Vice President",image:"src/assets/committee/nadun.png"},
+{name:"Saneru Weerasinghe",role:"Secretary",image:"src/assets/committee/saneru.png"},
+{name:"Lasindu Shaluka",role:"Treasurer",image:"src/assets/committee/lasindu.png"},
+{name:"Ishan Sasnaka",role:"Webmaster",image:"src/assets/committee/ishan.png"}
 ]
 },
 
