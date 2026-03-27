@@ -1,13 +1,13 @@
-import GIEEE7 from "../../public/projects/gammedda/GIEEE7.jpeg";
-import GIEEE6 from "../../public/projects/gammedda/GIEEE6.jpeg";
-import GIEEE12 from "../../public/projects/gammedda/GIEEE12.jpeg";
-import GIEEE13 from "../../public/projects/gammedda/GIEEE13.jpeg";
-import FV4 from "../../public/projects/fieldVisit/FV4.jpeg";
-import FV6 from "../../public/projects/fieldVisit/FV6.jpeg";
-import AIW4 from "../../public/projects/AIWorkShop/AIW4.jpeg";
-import AIW2 from "../../public/projects/AIWorkShop/AIW2.jpeg";
+import GIEEE7 from "../../../public/projects/gammedda/GIEEE7.jpeg";
+import GIEEE6 from "../../../public/projects/gammedda/GIEEE6.jpeg";
+import GIEEE12 from "../../../public/projects/gammedda/GIEEE12.jpeg";
+import GIEEE13 from "../../../public/projects/gammedda/GIEEE13.jpeg";
+import FV4 from "../../../public/projects/fieldVisit/FV4.jpeg";
+import FV6 from "../../../public/projects/fieldVisit/FV6.jpeg";
+import AIW4 from "../../../public/projects/AIWorkShop/AIW4.jpeg";
+import AIW2 from "../../../public/projects/AIWorkShop/AIW2.jpeg";
 
-import AIW9 from "../../public/projects/AIWorkShop/AIW9.jpeg";
+import AIW9 from "../../../public/projects/AIWorkShop/AIW9.jpeg";
 
 const sliderImages = [
     GIEEE12,
