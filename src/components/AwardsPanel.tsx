@@ -17,63 +17,31 @@ interface Award {
 }
 
 const awards: Award[] = [
-
-{
-id:"1",
-img:awd1,
-title:"IEEE Darrel Chong Student Activity Award – Gold (2021)",
-desc:"Recognized for the project 'Gammadatta IEEE API – Phase 2'."
-},
-
-{
-id:"2",
-img:awd2,
-title:"IEEE PES High Performance Student Branch Chapter – 2021",
-desc:"Awarded for outstanding IEEE PES student branch performance."
-},
-
-{
-id:"3",
-img:awd3,
-title:"Special Recognition – Best Humanitarian Project (2021)",
-desc:"Awarded at IEEE Sri Lanka Section Awards Night."
-},
-
-{
-id:"4",
-img:awd4,
-title:"Best Technical Chapter Activity Award – 2020",
-desc:"Awarded for outstanding technical activities."
-},
-
-{
-id:"5",
-img:awd5,
-title:"IEEE Darrel Chong Student Activity Award – Silver (2020)",
-desc:"Recognized for IEEE API Phase 1 project."
-},
-
-{
-id:"6",
-img:awd6,
-title:"IEEE PES High Performance Student Branch Chapter – 2020",
-desc:"Awarded for leadership and engagement."
-},
-
-{
-id:"7",
-img:awd7,
-title:"IEEE PES High Performance Student Branch Chapter – 2019",
-desc:"Recognized for excellence in activities."
-}
-
+{ id:"1", img:awd1, title:"Gold Award 2021", desc:"IEEE Darrel Chong Gold Award" },
+{ id:"2", img:awd2, title:"High Performance 2021", desc:"IEEE PES Student Branch Award" },
+{ id:"3", img:awd3, title:"Humanitarian Award", desc:"Best Humanitarian Project" },
+{ id:"4", img:awd4, title:"Technical Award 2020", desc:"Best Technical Chapter Activity" },
+{ id:"5", img:awd5, title:"Silver Award 2020", desc:"IEEE Darrel Chong Silver Award" },
+{ id:"6", img:awd6, title:"High Performance 2020", desc:"IEEE PES Student Branch Award" },
+{ id:"7", img:awd7, title:"High Performance 2019", desc:"IEEE PES Student Branch Award" },
 ];
 
 export default function AwardsPanel(){
 
 const [popup,setPopup] = useState<Award | null>(null);
-const [bottom,setBottom] = useState(90);
+const [index,setIndex] = useState(0);
+const [bottom,setBottom] = useState(20);
 
+/* 🔁 auto rotate (mobile only) */
+useEffect(()=>{
+const interval = setInterval(()=>{
+setIndex(prev => (prev + 1) % awards.length);
+},3000);
+
+return ()=>clearInterval(interval);
+},[]);
+
+/* ✅ FOOTER SAFE POSITION */
 useEffect(()=>{
 
 const handleScroll = ()=>{
@@ -84,6 +52,7 @@ if(!footer) return;
 
 const rect = footer.getBoundingClientRect();
 
+/* if footer visible */
 if(rect.top < window.innerHeight){
 
 setBottom(window.innerHeight - rect.top + 20);
@@ -96,50 +65,74 @@ setBottom(20);
 
 };
 
-window.addEventListener("scroll",handleScroll);
+handleScroll();
 
-return ()=>window.removeEventListener("scroll",handleScroll);
+window.addEventListener("scroll",handleScroll);
+window.addEventListener("resize",handleScroll);
+
+return ()=>{
+window.removeEventListener("scroll",handleScroll);
+window.removeEventListener("resize",handleScroll);
+};
 
 },[]);
+
+/* 📱 mobile 3 items */
+const visible = [
+awards[(index-1+awards.length)%awards.length],
+awards[index],
+awards[(index+1)%awards.length]
+];
 
 return(
 
 <>
 
-<div className="awards-panel" style={{bottom:`${bottom}px`}}>
+{/* ===== DESKTOP ===== */}
+<div className="awards-desktop" style={{bottom:`${bottom}px`}}>
 
-{awards.map((award,index)=>(
-
+{awards.map((award)=>(
 <div
 key={award.id}
-className={`award-icon blink-${index%3}`}
+className="award-icon"
 onClick={()=>setPopup(award)}
 >
-
-<img src={award.img} alt={award.title}/>
-
+<img src={award.img} alt={award.title} title={award.title}/>
 </div>
-
 ))}
 
 </div>
 
 
+{/* ===== MOBILE ===== */}
+<div className="awards-mobile" style={{bottom:`${bottom}px`}}>
+
+{visible.map((award,i)=>(
+<div
+key={award.id}
+className={`award-mobile ${i===1 ? "center" : "side"}`}
+onClick={()=>setPopup(award)}
+>
+<img src={award.img} alt={award.title} title={award.title}/>
+</div>
+))}
+
+</div>
+
+
+{/* ===== POPUP ===== */}
 {popup && (
 
 <div className="award-popup" onClick={()=>setPopup(null)}>
 
 <div className="award-popup-card" onClick={(e)=>e.stopPropagation()}>
 
-<img src={popup.img} alt={popup.title}/>
+<img src={popup.img} alt={popup.title} title={popup.title}/>
 
 <h3>{popup.title}</h3>
-
 <p>{popup.desc}</p>
 
-<button onClick={()=>setPopup(null)}>
-Close
-</button>
+<button onClick={()=>setPopup(null)}>Close</button>
 
 </div>
 
